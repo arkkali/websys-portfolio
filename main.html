@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lab Activity</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo">
+            <img src="logo.png" alt="NU Logo" width="100%" height="150" /></div>
+             <h1 id="intro" style="font-style: oblique; font-family: monospace; color: blanchedalmond;">Hello! ^^</h1>
+              <ul class="nav-links">
+                <a href="#" onclick="openModal('signup-modal')" class="auth-btn">Sign Up</a>
+                <a href="#" onclick="openModal('login-modal')" class="auth-btn">Log In</a>
+               <div class="nav-auth" style="display: none;">
+                  <li><a href="#home" class="auth-btn">Home</a></li>
+                  <li><a href="resume.html" class="auth-btn">Resume</a></li>
+                  <li><a href="#" onclick="logout()" class="auth-btn">Log Out</a></li>
+              </div>
+            </ul>
+        </div>
+         <!-- Sign Up Modal -->
+        <div id="signup-modal" class="modal">
+          <div class="modal-content">
+            <h2>Sign Up</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="auth-btn">Register</button>
+            <p id="signup-message"></p>
+          </div>
+        </div>
+
+        <!-- Log In Modal -->
+        <div id="login-modal" class="modal">
+          <div class="modal-content">
+            <h2>Log In</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Password">
+            <button id="login-button" class="auth-btn">Login</button>
+          </div>
+        </div>
+        <!-- Everything blurred until login -->
+        <div id="main-content" class="blurred">
+        <section id="home" class="hero">
+            <div class="hero-img">
+                <img src="w7.jpg" alt="Activity Photo" />
+            </div>
+            <div class="hero-text">
+                <div class="badges">
+                    <!-- Add your badges can be [your org or games that you played] -->
+                    <span class="badge">
+                        <img src="w5.jpg" alt="GDSC" />
+                        Arkkali
+                    </span>
+                </div>
+                <h1 style="font-size: 35px">Hi, I'm Allen!</h1>
+                <p>
+                    Hi, my name is Allen B Alegre but you can call me Len. I
+                    don't like being called by my full first name as it is a
+                    common name for boys. I am currently 19 years old and will
+                    be turning 20 next year August 4. My favorite colors are
+                    navy blue, mustard/sunflower yellow and I'm currently into
+                    pink. <br />
+                    <br />
+                    I do love butterflies as they are gorgeous yet they aren't
+                    aware of it which makes them more appealing to me. I also
+                    love to travel, I love to look at the cities from above but
+                    I kinda don't like being part of it. I hate crowded places.
+                    I love to be in higher places, it is calming for me to see
+                    lights coming from the windows of different people with
+                    different stories.
+
+                    <br />
+                    <br />
+                    I am currently taking 2nd year in Bachelor of science in
+                    information technology major in website and media
+                    application. Though this is far from what i can and what i
+                    want to do, this is the only option for me right now. Maybe
+                    when the time comes, opportunities will come for me to be
+                    able to pursue my passion in arts, and my love for real
+                    estate and construction. <br />
+                    <br />
+                    There's this quote that I read a few years ago that I really
+                    like and hold onto. It says that "I want to live, I want to
+                    see how my story ends. Because I might be aware of what I am
+                    but what can become of me is still unknown and I am trying
+                    to end up something endearing and warm."
+                </p>
+            </div>
+        </section>
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <img
+                        width="64"
+                        height="64"
+                        src="visual.png"
+                        alt="flutter"
+                    />
+                    <br />
+                    <h3>Visual Studio Code</h3>
+                    <p>
+                        This tool introduce me to html, css, and javascript
+                        language. It helps me learn how to create and design a
+                        website. Additionally it also helps me in learning
+                        database sql.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img
+                        width="64"
+                        height="64"
+                        src="android.png"
+                        alt="flutter"
+                    />
+                    <h3>Android Studio</h3>
+                    <p>
+                        In VSCode I learn how to create a website, meanwhile in
+                        Android studio I learn how to create and design an
+                        application. Both tool have similar UI which makes it a
+                        lot easier to use.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img width="64" height="64" src="canva.png" alt="flutter" />
+                    <br />
+                    <h3>Canva</h3>
+                    <p>
+                        I use Canva to create visual designs like posters,
+                        mockups, and school related projects. When programming,
+                        I use it to design UI layouts, icons, and graphics that
+                        I later implement into my projects to make them look
+                        clean and professional.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img
+                        width="64"
+                        height="64"
+                        src="eclipse.png"
+                        alt="flutter"
+                    />
+                    <br />
+                    <h3>Eclipse</h3>
+                    <p>
+                        I use Eclipse to write and run my Java programs. It
+                        helps me spot errors easily and makes coding simpler
+                        with features like auto-complete and project
+                        organization. It's a helpful tool when I'm still
+                        learning and building small programs.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img width="64" height="64" src="figma.png" alt="flutter" />
+                    <h3>Figma</h3>
+                    <p>
+                        I want to learn Figma because it's a tool used for
+                        designing websites and apps. It helps create layouts,
+                        buttons, and page structures before actually coding
+                        them. Learning it will help me plan and design my
+                        websites better before I start developing them.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img
+                        width="64"
+                        height="64"
+                        src="python.png"
+                        alt="flutter"
+                    />
+                    <br />
+                    <h3>Python</h3>
+                    <p>
+                        I want to learn Python because it's easy to understand
+                        and great for beginners. It can be used in many areas
+                        like web development, automation, and data analysis.
+                        Learning it will help me get better at programming and
+                        build useful projects.
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div>
+                <section id="projects" class="projects">
+                    <h2>Projects</h2>
+                    <div class="projects-container">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img
+                                    src="nuglow.png"
+                                    alt="Mobile App Development"
+                                />
+                            </div>
+                            <div class="project-content">
+                                <h3>Healthcare Appointment System (NU Glow)</h3>
+                                <p>
+                                    This project focuses on developing an
+                                    appointment management system for National
+                                    University derma clinic (NU Glow) allowing
+                                    students and faculty to book appointments
+                                    within reach and maintain medical history
+                                    records.
+                                </p>
+                                <div class="project-tags">
+                                    <span>HTML & CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>Visual Studio Code</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"
+                                        >View Project</a
+                                    >
+                                    <a href="#" class="project-link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image video-container">
+                                <iframe
+                                    width="767"
+                                    height="778"
+                                    src="https://www.youtube.com/embed/3bvm0vkirKY"
+                                    title="The Forsaken Soldier"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                    title="MORIONES"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict origin-when-cross-origin"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="project-content">
+                                <h3>Tech-Fiesta 2.0 (Moriones Festival)</h3>
+                                <p>
+                                    An Application Development Project wherein
+                                    we are tasked to create sets of game
+                                    according onto our given theme, Moriones
+                                    Festival.
+                                </p>
+                                <div class="project-tags">
+                                    <span>Java</span>
+                                    <span>Android Studio</span>
+                                    <span>#1 Over-all Champion</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"
+                                        >View Project</a>
+                                    <a href="#" class="project-link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img
+                                    src="alpas.png"
+                                    alt="Mobile App Development"/>
+                            </div>
+                            <div class="project-content">
+                                <h3>Healthcare Appointment System (Alpas Health
+                                    Oasis)</h3>
+                                <p> ALPAS Health Oasis is a Java-based
+                                    appointment system for RH clinics, promoting
+                                    sexual health awareness among Filipino
+                                    youth. Featuring Earnshaw Health Center near
+                                    NU Manila, it offers easy access to services
+                                    like birth control, STI/STD and HIV testing,
+                                    and maternal care.</p>
+                                <div class="project-tags">
+                                    <span>Java</span>
+                                    <span>JavaSwing</span>
+                                    <span>NetBeans</span>
+                                    <span>IntelliJ IDEA</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"
+                                        >View Project</a>
+                                    <a href="#" class="project-link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Len Alegre" width="150" />
+                </div>
+                <div class="footer-links">
+                    <a
+                        href="https://www.facebook.com/ark.kalli"
+                        target="_blank"
+                        class="social-link">
+                        <img src="fb.png" alt="Facebook" />
+                    </a>
+                    <a
+                        href="https://www.instagram.com/_llenthusiast/"
+                        target="_blank"
+                        class="social-link">
+                        <img src="ig.png" alt="Instagram" />
+                    </a>
+                    <a
+                        href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                        target="_blank"
+                        class="social-link">
+                        <img src="gmail.png" alt="Gmail" />
+                    </a>
+                </div>
+                <p class="footer-text">2025 Len Alegre. All rights reserved.</p>
+            </div>
+        </footer>
+      </div>
+   <script>
+        // Check login state when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginState();
+        });
+
+        function checkLoginState() {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            
+            if (loggedInUser) {
+                // User is logged in
+                const intro = document.getElementById("intro");
+                if (intro) {
+                    intro.textContent = `Feel free to check out Allen's Resume, ${loggedInUser}!`;
+                }
+
+                const content = document.getElementById("main-content");
+                if (content) {
+                    content.classList.remove("blurred");
+                    content.classList.add("unblurred");
+                }
+
+                const navAuth = document.querySelector(".nav-auth");
+                if (navAuth) navAuth.style.display = "flex";
+
+                // Hide login/signup buttons
+                document.querySelectorAll(".auth-btn").forEach(btn => {
+                    if (btn.textContent === "Sign Up" || btn.textContent === "Log In") {
+                        btn.style.display = "none";
+                    }
+                });
+            } else {
+                // User is not logged in
+                const content = document.getElementById("main-content");
+                if (content) {
+                    content.classList.add("blurred");
+                    content.classList.remove("unblurred");
+                }
+
+                const navAuth = document.querySelector(".nav-auth");
+                if (navAuth) navAuth.style.display = "none";
+
+                // Show login/signup buttons
+                document.querySelectorAll(".auth-btn").forEach(btn => {
+                    if (btn.textContent === "Sign Up" || btn.textContent === "Log In") {
+                        btn.style.display = "inline-block";
+                    }
+                });
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            checkLoginState();
+            
+            // Reset intro text
+            const intro = document.getElementById("intro");
+            if (intro) {
+                intro.textContent = "Hello! ^^";
+            }
+            
+            alert("You have been logged out.");
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            let modals = document.querySelectorAll(".modal");
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        };
+        
+        document.querySelector("#signup-modal .auth-btn").addEventListener("click", () => {
+            let email = document.querySelector("#signup-modal input[type='email']").value.trim();
+            let pass = document.querySelector("#signup-modal input[type='password']").value.trim();
+            let users = localStorage.getItem("users") || "";
+
+            if (!email || !pass) return alert("❌ Fill in all fields.");
+            if (users.includes(`${email}:`)) return alert("⚠️ Already registered.");
+
+            localStorage.setItem("users", users + `${email}:${pass};`);
+            alert("✅ Registered!");
+            closeModal("signup-modal");
+        });
+        
+        document.querySelector("#login-button").addEventListener("click", () => {
+            let email = document.querySelector("#login-email").value.trim();
+            let pass = document.querySelector("#login-password").value.trim();
+            let usersRaw = localStorage.getItem("users") || "";
+            let users = usersRaw ? usersRaw.split(";").filter(u => u.trim() !== "") : [];
+
+            for (let user of users) {
+                if (user === `${email}:${pass}`) {
+                    localStorage.setItem("loggedInUser", email);
+                    checkLoginState();
+                    closeModal("login-modal");
+                    return;
+                }
+            }
+
+            alert("❌ Invalid login.");
+        });
+    </script>
+    </body>
+</html>

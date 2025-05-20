@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Allen Alegre</title>
+  <link rel="stylesheet" href="resume.css">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<link rel="stylesheet" href="/lab/styles/resume.css" media="screen" /> 
+<link rel="stylesheet" href="/lab/styles/resume-print.css" media="print" />
+
+</head>
+<body>
+  <div class="card">
+<!-- Header -->
+    <div class="header">
+        <img src="id2.jpg" alt="Profile Photo" />
+        <div class="header-info">
+            <h1>Allen B. Alegre</h1>
+            <p> 09303527103</p>
+            <p> alegreab@students.national-u.edu.ph</p>
+            <p> #1 London St. England</p>
+            <a href="main.html" class="btn-back"> Back to Home</a>
+            <button class="btn-print" onclick="window.print()"> Print
+            </button>
+          </div>
+    </div>
+<!-- Skills -->
+    <div class="section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div>Adaptability</div>
+            <div>Time Management</div>
+            <div>Can work under pressure</div>
+            <div>Creative</div>
+            <div>Realistic Portrait/Drawings</div>
+            <div>Basic Web Development and Designing</div>
+            <div>Computer profiecency</div>
+        </div>
+    </div>
+<!-- Education -- -->
+    <div class="section education">
+        <h2>Education</h2>
+        <div class="edu-entry">
+            <strong>2021-2023</strong><br /> <span>FEU Roosevelt (Marikina)</span>
+            <span>Humanities and Social Sciences</span>
+        </div>
+    <div class="edu-entry">
+        <strong>2023-2027</strong><br /> <span>National University (Manila)</span>
+        <span>Bachelor of Science in Information Technology with Major in Website and Mobile Application</span>
+    </div>
+<!-- Add more as needed -->
+</div>
+<!-- Experience -->
+<div class="section experience">
+    <h2>Experiences</h2>
+    <div class="exp-entry">
+        <strong>National University Student Development And Activities Office</strong>
+        <ul>
+            <li>University Scholar</li>
+            <li>Providing Assistance in the office as we scholars needs to render a 10 hour service every semester.</li>
+            <li>2023-2027 (Until I Graduated)</li>
+        </ul>
+    </div>
+<!-- Research/Project -->
+    <div class="section research">
+        <h2>Projects/Events Participated In</h2>
+        <div class="research-title">Outreach Program</div>
+        <span>December 1, 2023</span><br>
+        <span>I participated in the program that SDAO conducted, it was an outreach program for the orphans in Manila as compensation for the scholars that failed to maintain or keep their scholarship. </span>
+        <div class="research-title">Drug Testing (Within the University)</div>
+        <span>January 21, 2025</span><br>
+        <span>I provide assistance in conducting drug testing among the random students of National University</span>
+    </div>
+<!-- Activities -->
+    <div class="section activities">
+        <h2>Activities</h2>
+        <div class="activity-entry">• University Back to School Orientation (Student Assistant)</div> 
+        <div class="activity-entry">• University Office Christmas (Tree) Decoration Competition (Design and Execution Team)</div> 
+    </div>
+    </div>
+    <script>
+    // Function to check login state and update UI
+    function checkLoginState() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+            // User is logged in - update UI
+            const intro = document.getElementById("intro");
+            if (intro) {
+                intro.textContent = `Feel free to check out Allen's Resume, ${loggedInUser}!`;
+            }
+
+            const content = document.getElementById("main-content");
+            if (content) {
+                content.classList.remove("blurred");
+                content.classList.add("unblurred");
+            }
+
+            const navAuth = document.querySelector(".nav-auth");
+            if (navAuth) navAuth.style.display = "flex";
+
+            document.querySelectorAll(".auth-btn").forEach(btn => {
+                if (btn.textContent === "Sign Up" || btn.textContent === "Log In") {
+                    btn.style.display = "none";
+                }
+            });
+        }
+    }
+
+    // Run this when the page loads
+    document.addEventListener('DOMContentLoaded', checkLoginState);
+
+    // Your existing modal functions
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        let modals = document.querySelectorAll(".modal");
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    };
+    
+    // Your existing signup and login handlers
+    document.querySelector("#signup-modal .auth-btn")?.addEventListener("click", () => {
+        let email = document.querySelector("#signup-modal input[type='email']").value.trim();
+        let pass = document.querySelector("#signup-modal input[type='password']").value.trim();
+        let users = localStorage.getItem("users") || "";
+
+        if (!email || !pass) return alert("❌ Fill in all fields.");
+        if (users.includes(`${email}:`)) return alert("⚠️ Already registered.");
+
+        localStorage.setItem("users", users + `${email}:${pass};`);
+        alert("✅ Registered!");
+        closeModal("signup-modal");
+    });
+    
+    document.querySelector("#login-button")?.addEventListener("click", () => {
+        let email = document.querySelector("#login-email").value.trim();
+        let pass = document.querySelector("#login-password").value.trim();
+        let usersRaw = localStorage.getItem("users") || "";
+        let users = usersRaw ? usersRaw.split(";").filter(u => u.trim() !== "") : [];
+
+        for (let user of users) {
+            if (user === `${email}:${pass}`) {
+                localStorage.setItem("loggedInUser", email);
+                checkLoginState(); // Update UI immediately
+                closeModal("login-modal");
+                return;
+            }
+        }
+
+        alert("❌ Invalid login.");
+    });
+</script>
+</body>
+</html>
